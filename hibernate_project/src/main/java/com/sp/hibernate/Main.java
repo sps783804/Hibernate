@@ -13,11 +13,18 @@ public class Main {
 		Configuration config = new Configuration();
 		config.configure("hibernate.cfg.xml");
 
+		// Create a SessionFactory Object with the help of Configuration (typically Hibernate).
 		SessionFactory sessionFactory = config.buildSessionFactory();
+
+		// Open a new session from the SessionFactory.
 		Session session = sessionFactory.openSession();
 
+		// Begin a transaction to perform database operations.
 		Transaction tx = session.beginTransaction();
+
+		// Create an instance of the Student class (assuming it exists and is mapped to a database table).
 		Student student = new Student();
+
 
 		//create
 		student.setId(103);
